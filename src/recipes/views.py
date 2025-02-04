@@ -8,8 +8,8 @@ def home(request):
 
 class RecipeListView(ListView):
     model = Recipe
-    template_name = 'recipes/main.html'
+    template_name = 'recipes/recipe-list.html'
 
 class RecipeDetailView(DetailView):
     model = Recipe
-    template_name = 'recipes/detail.html'
+    template_name = 'recipes/recipe-detail.html'
