@@ -1,14 +1,43 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
+    <head>
+        <style>
+            .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .container {
+                background-color: #eee7dd;
+            }
+            .button {
+                background-color: #a43f4c;
+                color: #eee7dd;
+            }
+        </style>
+    </head>
     <title>
         Recipe Details
     </title>
-    <body>
+    <body class="container">
         <h2>Recipe Details: </h2>
-        <b>Title: </b> {{object.name}} <br>
-        <b>Ingredients: </b> {{object.ingredients}} <br>
-        <b>Cooking Time: </b> {{object.cooking_time}} <br>
-        <b>Difficulty: </b> {{object.difficulty}} <br>
-        <img src="{{object.pic.url}}" width="200" height="300" />
+        <table border="1" cellpadding="5" cellspacing="5" style="margin: 0px auto;">
+            <tr>
+                <td>
+                    <b>Title: </b> {{object.name}} <br>
+                    <b>Ingredients: </b> {{object.ingredients}} <br>
+                    <b>Cooking Time: </b> {{object.cooking_time}} <br>
+                    <b>Difficulty: </b> {{object.difficulty}} <br>
+                </td>
+                <td>
+                    <img src="{{object.pic.url}}" width="200" height="300" />
+                </td>
+            </tr>
+        </table>
+        <a href="{% url 'recipes:list' %}">
+            <button type="button" class="center button">Back</button>
+        </a>
     </body>
 </html>

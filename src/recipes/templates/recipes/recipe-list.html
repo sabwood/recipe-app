@@ -1,20 +1,64 @@
-<h1>Recipes' List</h1>
+{% load static %}
 
-<table border="1" cellpadding="5" cellspacing="5">
-    <tr>
-        <td>Recipe Names: </td>
-        <td>Recipe Images: </td>
-    </tr>
-    {% for object in object_list %}
-    <tr>
-        <td>
-            <a href="{{object.get_absolute_url}}">
-                {{object.name}}
-            </a>
-        </td>
-        <td>
-            <img src="{{object.pic.url}}" width="150" height="200" />
-        </td>
-    </tr>
-    {% endfor %}
-</table>
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .container {
+                background-color: #eee7dd;
+            }
+            .logout-button {
+                background-color: #844734;
+                color: #eee7dd;
+            }
+            .details-button {
+                background-color: #5a6c56;
+                color: #eee7dd;
+            }
+        </style>
+    </head>
+    <body class="container">
+        <h1 style="text-align: center;">Recipes' List</h1>
+
+        <a href="{% url 'logout' %}">
+            <button type="button" class="center logout-button">Logout</button>
+        </a>
+        <table border="1" cellpadding="5" cellspacing="5" style="margin: 0px auto;">
+            <tr>
+                <td>
+                    <h3 style="text-align: center;">
+                        Recipe Names: 
+                    </h3>
+                </td>
+                <td>
+                    <h3 style="text-align: center;">
+                        Recipe Images: 
+                    </h3>
+                </td>
+            </tr>
+            {% for object in object_list %}
+            <tr>
+                <td>
+                    <div style="text-align: center;">
+                        {{object.name}}
+                    </div>
+                    <br>
+                    <a href="{{object.get_absolute_url}}">
+                        <button type="button" class="center details-button">
+                            More Details: 
+                        </button>
+                    </a>
+                </td>
+                <td>
+                    <img src="{{object.pic.url}}" width="150" height="200" />
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

@@ -1,5 +1,3 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,16 +16,11 @@
             }
         </style>
     </head>
-    <title>
-        Recipe App
-    </title>
     <body class="container">
-        <br>
-        <br>
-        <h1 style="text-align: center;">Start Cooking!</h1>
-        <img src="{% static 'recipes/images/app-home.jpg' %}" alt="home" width="600" height="400" class="center">
+        <h1 style="text-align: center;">You've successfully logged out!</h1>
+
         <a href="{% url 'login' %}">
-            <button type="button" class="center button"> - Login Here - </button>
+            <button type="button" class="center button">Login</button>
         </a>
     </body>
 </html>

@@ -1,5 +1,3 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,16 +16,20 @@
             }
         </style>
     </head>
-    <title>
-        Recipe App
-    </title>
     <body class="container">
+        <h1 style="text-align: center;">Login</h1>
         <br>
         <br>
-        <h1 style="text-align: center;">Start Cooking!</h1>
-        <img src="{% static 'recipes/images/app-home.jpg' %}" alt="home" width="600" height="400" class="center">
-        <a href="{% url 'login' %}">
-            <button type="button" class="center button"> - Login Here - </button>
-        </a>
+
+        {% if error_message %}
+            {{error_message}}
+        {% endif %}
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form}}
+
+            <button type="submit" class="button">Login</button>
+        </form>
     </body>
 </html>
