@@ -26,10 +26,10 @@ def search(request):
     chart = None
 
     if request.method == 'POST':
-        recipe_difficulty = request.POST.get('recipe_difficulty')
+        recipe_ingredients = request.POST.get('recipe_ingredients')
         chart_type = request.POST.get('chart_type')
 
-        qs = Recipe.objects.filter(difficulty=recipe_difficulty)
+        qs = Recipe.objects.filter(ingredients=recipe_ingredients)
 
         if qs:
             recipes_df = pd.DataFrame(qs.values())

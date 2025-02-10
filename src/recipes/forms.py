@@ -6,13 +6,6 @@ CHART__CHOICES = (
     ('#3', 'Line chart')
 )
 
-DIFFICULTY__CHOICES = (
-    ('#1', 'Easy'),
-    ('#2', 'Medium'),
-    ('#3', 'Intermediate'),
-    ('#4', 'Hard')
-)
-
 class RecipesSearchForm(forms.Form):
-    recipe_difficulty = forms.ChoiceField(choices=DIFFICULTY__CHOICES)
+    recipe_ingredients = forms.CharField(max_length=120)
     chart_type = forms.ChoiceField(choices=CHART__CHOICES)
