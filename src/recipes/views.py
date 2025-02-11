@@ -4,7 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from .forms import RecipesSearchForm
 from .models import Recipe
-from .utils import get_chart
+from .utils import get_chart, get_recipename_from_id
 import pandas as pd
 
 # Create your views here.
@@ -33,6 +33,8 @@ def search(request):
 
         if qs:
             recipes_df = pd.DataFrame(qs.values())
+            
+            recipes_df['recipe_id'] = recipe_df['recipe_id'].apply(get_recipename_from_id)
 
             chart = get_chart(chart_type, recipes_df, labels=recipes_df['ingredients'].values)
 
