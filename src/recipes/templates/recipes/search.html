@@ -2,21 +2,49 @@
 
 <!DOCTYPE html>
 <html>
-    <body>
-        <h1>Search for Recipes: </h1>
+    <head>
+        <style>
+            .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .container {
+                background-color: #eee7dd;
+            }
+            .back-button {
+                background-color: #a43f4c;
+                color: #eee7dd;
+            }
+            .search-button {
+                background-color: #b74451;
+                color: #eee7dd;
+            }
+        </style>
+    </head>
+    <body class="container">
+        <h2>Search for Recipes by Ingredients</h2>
         <hr>
-        <form action="" method="POST">
+        <br>
+        <br>
+        <form class="center" action="" method="POST">
             {% csrf_token %}
             {{form}}
-            <button type="submit">Search</button>
+            <button type="submit" class="search-button">Search</button>
         </form>
+        <br>
         <br>
         {% if recipes_df %}
             {{recipes_df|safe}}
             <br>
-            <img src="data:image/png;base64, {{chart|safe}}">
+            <img class="center" src="data:image/png;base64, {{chart|safe}}">
         {% else %}
-            <h3>No data</h3>
+            <div style="text-align: center;">No data</div>
         {% endif %}
+        <br>
+        <br>
+        <a href="{% url 'recipes:list' %}">
+            <button type="button" class="center back-button">Back</button>
+        </a>
     </body>
 </html>

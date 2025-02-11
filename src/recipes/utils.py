@@ -28,12 +28,16 @@ def get_chart(chart_type, data, **kwargs):
     fig=plt.figure(figsize=(6,3))
 
     if chart_type == '#1':
-        plt.bar(data['name'], data['ingredients'])
+        plt.bar(data['name'], data['cooking_time'])
+        plt.xlabel('Recipe Name')
+        plt.ylabel('Cooking Time')
     elif chart_type == '#2':
         labels=kwargs.get('labels')
-        plt.pie(data['ingredients'], labels=labels)
+        plt.pie(data['cooking_time'], labels=labels)
     elif chart_type == '#3':
-        plt.plot(data['name'], data['ingredients'])
+        plt.plot(data['name'], data['cooking_time'])
+        plt.xlabel('Recipe Name')
+        plt.ylabel('Cooking Time')
     else:
         print ('Unknown chart type')
 

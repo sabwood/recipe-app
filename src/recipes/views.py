@@ -29,12 +29,12 @@ def search(request):
         recipe_ingredients = request.POST.get('recipe_ingredients')
         chart_type = request.POST.get('chart_type')
 
-        qs = Recipe.objects.filter(ingredients=recipe_ingredients)
+        qs = Recipe.objects.filter(ingredients__icontains=recipe_ingredients)
 
         if qs:
             recipes_df = pd.DataFrame(qs.values())
             
-            recipes_df['recipe_id'] = recipe_df['recipe_id'].apply(get_recipename_from_id)
+            recipes_df['id'] = recipes_df['id'].apply(get_recipename_from_id)
 
             chart = get_chart(chart_type, recipes_df, labels=recipes_df['ingredients'].values)
 

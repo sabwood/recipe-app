@@ -16,6 +16,10 @@
                 background-color: #844734;
                 color: #eee7dd;
             }
+            .search-button {
+                background-color: #b74451;
+                color: #eee7dd;
+            }
             .details-button {
                 background-color: #5a6c56;
                 color: #eee7dd;
@@ -24,10 +28,15 @@
     </head>
     <body class="container">
         <h1 style="text-align: center;">Recipes' List</h1>
-
+        <hr>
         <a href="{% url 'logout' %}">
             <button type="button" class="center logout-button">Logout</button>
         </a>
+        <br>
+        <a href="{% url 'recipes:search' %}">
+            <button type="button" class="center search-button">Search</button>
+        </a>
+        <br>
         <table border="1" cellpadding="5" cellspacing="5" style="margin: 0px auto;">
             <tr>
                 <td>
