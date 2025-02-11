@@ -36,7 +36,7 @@ def search(request):
             
             recipes_df['id'] = recipes_df['id'].apply(get_recipename_from_id)
 
-            chart = get_chart(chart_type, recipes_df, labels=recipes_df['ingredients'].values)
+            chart = get_chart(chart_type, recipes_df, labels=recipes_df['cooking_time'].values)
 
             recipes_df = recipes_df.to_html()
 
