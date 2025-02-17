@@ -17,25 +17,39 @@
                 color: #eee7dd;
             }
             .search-button {
-                background-color: #b74451;
+                background-color: #9a404e;
+                color: #eee7dd;
+            }
+            .about-button {
+                background-color: #91867a;
+                color: #eee7dd;
+            }
+            .add-button {
+                background-color: #54614d;
                 color: #eee7dd;
             }
             .details-button {
-                background-color: #5a6c56;
+                background-color: #5d6c56;
                 color: #eee7dd;
+            }
+            .navitem {
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                flex: 1;
             }
         </style>
     </head>
     <body class="container">
+        <nav>
+            <a href="{% url 'logout' %}" class="navitem logout-button">Logout</a>
+            <a href="{% url 'recipes:search' %}" class="navitem search-button">Search</a>
+            <a href="{% url 'recipes:add_recipe' %}" class="navitem add-button">Add Recipe</a>
+            <a href="https://sabwood.github.io/portfolio-website/" target="_blank" class="navitem about-button">About the Developer</a>
+        </nav>
+        <hr>
         <h1 style="text-align: center;">Recipes' List</h1>
         <hr>
-        <a href="{% url 'logout' %}">
-            <button type="button" class="center logout-button">Logout</button>
-        </a>
-        <br>
-        <a href="{% url 'recipes:search' %}">
-            <button type="button" class="center search-button">Search</button>
-        </a>
         <br>
         <table border="1" cellpadding="5" cellspacing="5" style="margin: 0px auto;">
             <tr>
