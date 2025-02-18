@@ -58,11 +58,6 @@
                         Recipe Names: 
                     </h3>
                 </td>
-                <td>
-                    <h3 style="text-align: center;">
-                        Recipe Images: 
-                    </h3>
-                </td>
             </tr>
             {% for object in object_list %}
             <tr>
@@ -76,9 +71,6 @@
                             More Details: 
                         </button>
                     </a>
-                </td>
-                <td>
-                    <img src="{{object.pic.url}}" width="150" height="200" />
                 </td>
             </tr>
             {% endfor %}
