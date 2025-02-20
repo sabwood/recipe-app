@@ -27,8 +27,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-ml49cp(e)=yakpe
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "https://git.heroku.com/shielded-retreat-63245.git",
-    "https://shielded-retreat-63245-f9e0c2a57828.herokuapp.com",
+    "git.heroku.com/shielded-retreat-63245.git",
+    "shielded-retreat-63245-f9e0c2a57828.herokuapp.com",
     "127.0.0.1",
     "127.0.0.1:8000",
     "localhost",
