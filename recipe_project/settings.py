@@ -28,7 +28,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     "https://git.heroku.com/shielded-retreat-63245.git",
-    "https://shielded-retreat-63245-f9e0c2a57828.herokuapp.com/",
+    "https://shielded-retreat-63245-f9e0c2a57828.herokuapp.com",
     "127.0.0.1",
     "127.0.0.1:8000",
     "localhost",
